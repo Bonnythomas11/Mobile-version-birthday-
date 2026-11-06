@@ -42,7 +42,6 @@
       position: relative;
     }
 
-    /* Ambient Fairy Light Bokeh & Heart Balloons */
     .bg-lights {
       position: fixed;
       inset: 0;
@@ -103,7 +102,6 @@
       100% { transform: scale(1.2); opacity: 1; }
     }
 
-    /* Mobile First Responsive Container */
     .container {
       width: 100%;
       max-width: 480px;
@@ -113,7 +111,6 @@
       z-index: 2;
     }
 
-    /* Header Ribbon Badges */
     .header-badges {
       display: flex;
       justify-content: center;
@@ -137,7 +134,6 @@
       backdrop-filter: blur(8px);
     }
 
-    /* Hero Title Section */
     .hero-title-box {
       text-align: center;
       margin-bottom: 22px;
@@ -174,7 +170,6 @@
       line-height: 1.45;
     }
 
-    /* Mobile Glassmorphism Celebratory Cards */
     .celebration-card {
       background: linear-gradient(135deg, rgba(255, 245, 250, 0.85) 0%, rgba(250, 238, 255, 0.88) 100%);
       border-radius: 24px;
@@ -241,7 +236,6 @@
       transform: scale(1);
     }
 
-    /* Touch-friendly Mode Switcher Bar */
     .mode-switcher-bar {
       display: flex;
       background: rgba(255, 215, 230, 0.6);
@@ -277,7 +271,6 @@
       box-shadow: 0 3px 12px rgba(230, 34, 99, 0.22);
     }
 
-    /* Media Viewport Container - 16:9 responsive */
     .media-viewport {
       width: 100%;
       aspect-ratio: 16 / 9;
@@ -320,7 +313,6 @@
       background: #000;
     }
 
-    /* Pastel Gift Wrap Cover with Big Touch Target */
     .gift-wrap-veil {
       position: absolute;
       inset: 0;
@@ -415,7 +407,6 @@
       font-weight: 700;
     }
 
-    /* Fairytale Birthday Message Box */
     .fairytale-note {
       background: linear-gradient(135deg, rgba(255, 245, 250, 0.9) 0%, rgba(246, 235, 255, 0.92) 100%);
       border-radius: 22px;
@@ -436,7 +427,6 @@
       margin-bottom: 8px;
     }
 
-    /* Cake Section with Bigger Touch Hitboxes */
     .cake-card {
       text-align: center;
       padding: 24px 14px;
@@ -557,7 +547,6 @@
       border: 1px solid #ffaec7;
     }
 
-    /* Floating Music Player Optimized for Mobile Bottom Safe-Area */
     .music-pill-btn {
       position: fixed;
       bottom: calc(16px + env(safe-area-inset-bottom, 0px));
@@ -636,13 +625,11 @@
 </head>
 <body onclick="tryAutoPlayMusic()">
 
-  <!-- Background Music Element -->
   <audio id="bgMusic" loop preload="auto">
     <source src="Pesamale.mp3" type="audio/mp3" />
     <source src="pesamale.mp3" type="audio/mp3" />
   </audio>
 
-  <!-- Ambient Glowing Fairytale Bokeh Lights & Balloons -->
   <div class="bg-lights">
     <div class="bokeh-orb orb-gold1"></div>
     <div class="bokeh-orb orb-rose1"></div>
@@ -662,20 +649,18 @@
 
   <div class="container">
 
-    <!-- Top Badge Pills -->
     <div class="header-badges">
       <div class="badge-pill">🎂 Minnu's Celebration</div>
       <div class="badge-pill">✨ Real & Ghibli Worlds</div>
     </div>
 
-    <!-- Hero Title -->
     <div class="hero-title-box">
       <div class="sub-heading">To Our Most Wonderful</div>
       <h1 class="main-title">Happy Birthday, Minnu!</h1>
       <p class="subtitle-note">Unwrap each surprise to explore both Real & Ghibli Magic 🌸✨</p>
     </div>
 
-    <!-- ==================== SURPRISE 1: BIRTHDAY PORTRAIT ==================== -->
+    <!-- 1: Birthday Portrait -->
     <div class="celebration-card">
       <div class="card-header">
         <div class="card-title-group">
@@ -685,7 +670,6 @@
         <div class="revealed-badge" id="photoBadge">✨ Revealed</div>
       </div>
 
-      <!-- Real vs Ghibli Switcher Bar -->
       <div class="mode-switcher-bar" id="photoTabs" style="display: none;">
         <button class="switch-btn active" id="tabPhotoReal" onclick="switchPhoto('real', event)">
           <span>📸</span> Real World
@@ -696,7 +680,6 @@
       </div>
 
       <div class="media-viewport" id="photoBox" onclick="revealMystery('photo')">
-        <!-- 1) Real Portrait Photo -->
         <img 
           id="imgPhotoReal"
           src="https://lh3.googleusercontent.com/d/1nt1ZYW0Rvgg8P4E1EvoeqQHwYaxlyga7=w1600" 
@@ -705,8 +688,271 @@
           loading="eager"
         />
 
-        <!-- 2) Ghibli Anime Portrait Photo -->
         <img 
           id="imgPhotoGhibli"
           src="https://lh3.googleusercontent.com/d/179fylVr1MoSUrk68qroe1_KO3iKONK3n=w1600" 
-          alt="Minnu
+          alt="Minnu's Ghibli Style Birthday Portrait" 
+          class="portrait-image"
+          loading="lazy"
+        />
+
+        <div class="gift-wrap-veil" id="photoVeil">
+          <div class="ribbon-vertical"></div>
+          <div class="ribbon-horizontal"></div>
+          <div class="veil-badge">
+            <span class="veil-badge-emoji">🎁</span>
+            <div class="veil-badge-title">Secret Portrait Box</div>
+            <div class="veil-badge-tap">Tap to Unwrap ✨</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <span class="handwritten-caption" id="photoCaption">The Birthday Queen 👑 (Real)</span>
+        <span style="color: #7b4f7a; font-size: 0.72rem; font-weight: 700;">Double World Edition</span>
+      </div>
+    </div>
+
+    <!-- 2: Celebration Reel -->
+    <div class="celebration-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="card-number">2</div>
+          <div class="card-heading">Celebration Reel</div>
+        </div>
+        <div class="revealed-badge" id="videoBadge">✨ Revealed</div>
+      </div>
+
+      <div class="mode-switcher-bar" id="videoTabs" style="display: none;">
+        <button class="switch-btn active" id="tabVideoReal" onclick="switchVideo('real', event)">
+          <span>🎬</span> Real Video
+        </button>
+        <button class="switch-btn" id="tabVideoGhibli" onclick="switchVideo('ghibli', event)">
+          <span>🪄</span> Ghibli Anime Video
+        </button>
+      </div>
+
+      <div class="media-viewport" id="videoBox" onclick="revealMystery('video')">
+        <div class="video-wrapper">
+          <iframe 
+            id="driveVideoPlayer"
+            class="embedded-player" 
+            src="about:blank"
+            data-src-real="https://drive.google.com/file/d/1CxlCyZTUMXTOGiIgqBUMI6ZeiFWqxXHl/preview"
+            data-src-ghibli="https://drive.google.com/file/d/1VvqjYaQAQO3CIRd7mPiWXwN8mGtGn6J3/preview"
+            allow="autoplay; encrypted-media; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="gift-wrap-veil" id="videoVeil">
+          <div class="ribbon-vertical"></div>
+          <div class="ribbon-horizontal"></div>
+          <div class="veil-badge">
+            <span class="veil-badge-emoji">🎬</span>
+            <div class="veil-badge-title">Secret Celebration Reel</div>
+            <div class="veil-badge-tap">Tap to Play 🪄</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <span class="handwritten-caption" id="videoCaption">Pure Joy & Confetti 💖 (Real)</span>
+        <span style="color: #7b4f7a; font-size: 0.72rem; font-weight: 700;">Live Highlight</span>
+      </div>
+    </div>
+
+    <!-- Fairytale Birthday Note -->
+    <div class="fairytale-note">
+      <div style="font-size: 1.6rem; margin-bottom: 6px;">💌</div>
+      <div class="note-quote">
+        “May your special day be filled with warm smiles, soft laughter, pastel balloons, sweet teddy bear cakes, and every wish of your heart coming true!”
+      </div>
+      <div style="font-family: 'Caveat', cursive; font-size: 1.35rem; color: #ff3371; font-weight: 800;">
+        Always keep shining, Minnu ✨
+      </div>
+    </div>
+
+    <!-- Interactive Teddy Bear Birthday Cake -->
+    <div class="celebration-card cake-card">
+      <div class="candles-row">
+        <div class="candle" onclick="blowCandle(this)">
+          <div class="flame"></div>
+          <div class="candle-stick"></div>
+        </div>
+        <div class="candle" onclick="blowCandle(this)">
+          <div class="flame"></div>
+          <div class="candle-stick"></div>
+        </div>
+        <div class="candle" onclick="blowCandle(this)">
+          <div class="flame"></div>
+          <div class="candle-stick"></div>
+        </div>
+      </div>
+
+      <div class="cake-top-tier">★ MINNU ★</div>
+      <div class="cake-bottom-tier">SWEETEST WISHES</div>
+
+      <div class="cake-hint-text" id="cakeInstruction">Tap each candle to blow out your birthday flames! 🎂</div>
+      <div class="wish-banner-box" id="wishBanner">🎉 Wish Granted! May all your dreams come true, Minnu! 🌟</div>
+    </div>
+
+  </div>
+
+  <!-- Music Pill -->
+  <div class="music-pill-btn" id="musicBtn" onclick="toggleMusic(event)">
+    <span class="vinyl-icon">🎵</span>
+    <div class="music-info">
+      <span class="music-track-title">Pesamale 🎶</span>
+      <span class="music-play-status" id="musicStatus">Tap to Play</span>
+    </div>
+    <div class="equalizer-bars">
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+    </div>
+  </div>
+
+  <script>
+    let isMusicPlaying = false;
+    let autoPlayAttempted = false;
+    let blownCandlesCount = 0;
+    const bgMusic = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    const musicStatus = document.getElementById('musicStatus');
+
+    function tryAutoPlayMusic() {
+      if (!autoPlayAttempted && !isMusicPlaying) {
+        playMusic();
+        autoPlayAttempted = true;
+      }
+    }
+
+    function playMusic() {
+      if (!bgMusic) return;
+      bgMusic.play().then(() => {
+        isMusicPlaying = true;
+        musicBtn.classList.add('playing');
+        musicStatus.innerText = 'Playing';
+      }).catch(err => {
+        console.log("Waiting for user tap to play audio", err);
+      });
+    }
+
+    function pauseMusic() {
+      if (!bgMusic) return;
+      bgMusic.pause();
+      isMusicPlaying = false;
+      musicBtn.classList.remove('playing');
+      musicStatus.innerText = 'Paused';
+    }
+
+    function toggleMusic(e) {
+      if (e) e.stopPropagation();
+      if (isMusicPlaying) {
+        pauseMusic();
+      } else {
+        playMusic();
+      }
+    }
+
+    function revealMystery(type) {
+      tryAutoPlayMusic();
+      if (type === 'photo') {
+        const veil = document.getElementById('photoVeil');
+        if (!veil.classList.contains('opened')) {
+          veil.classList.add('opened');
+          document.getElementById('photoBadge').classList.add('active');
+          document.getElementById('photoTabs').style.display = 'flex';
+          triggerConfetti(55);
+        }
+      } else if (type === 'video') {
+        const veil = document.getElementById('videoVeil');
+        if (!veil.classList.contains('opened')) {
+          veil.classList.add('opened');
+          document.getElementById('videoBadge').classList.add('active');
+          document.getElementById('videoTabs').style.display = 'flex';
+          
+          const iframe = document.getElementById('driveVideoPlayer');
+          if (iframe && iframe.src === 'about:blank') {
+            iframe.src = iframe.getAttribute('data-src-real');
+          }
+          triggerConfetti(60);
+        }
+      }
+    }
+
+    function switchPhoto(mode, e) {
+      if (e) e.stopPropagation();
+      const realTab = document.getElementById('tabPhotoReal');
+      const ghibliTab = document.getElementById('tabPhotoGhibli');
+      const imgReal = document.getElementById('imgPhotoReal');
+      const imgGhibli = document.getElementById('imgPhotoGhibli');
+      const caption = document.getElementById('photoCaption');
+
+      if (mode === 'real') {
+        realTab.classList.add('active');
+        ghibliTab.classList.remove('active');
+        imgReal.classList.add('active');
+        imgGhibli.classList.remove('active');
+        caption.innerText = 'The Birthday Queen 👑 (Real)';
+      } else {
+        ghibliTab.classList.add('active');
+        realTab.classList.remove('active');
+        imgGhibli.classList.add('active');
+        imgReal.classList.remove('active');
+        caption.innerText = 'Ghibli Fairy Tale 🌸✨';
+      }
+      triggerConfetti(30);
+    }
+
+    function switchVideo(mode, e) {
+      if (e) e.stopPropagation();
+      const realTab = document.getElementById('tabVideoReal');
+      const ghibliTab = document.getElementById('tabVideoGhibli');
+      const iframe = document.getElementById('driveVideoPlayer');
+      const caption = document.getElementById('videoCaption');
+
+      if (mode === 'real') {
+        realTab.classList.add('active');
+        ghibliTab.classList.remove('active');
+        iframe.src = iframe.getAttribute('data-src-real');
+        caption.innerText = 'Pure Joy & Confetti 💖 (Real)';
+      } else {
+        ghibliTab.classList.add('active');
+        realTab.classList.remove('active');
+        iframe.src = iframe.getAttribute('data-src-ghibli');
+        caption.innerText = 'Ghibli Animated Magic 🪄🎂';
+      }
+      triggerConfetti(35);
+    }
+
+    function triggerConfetti(count = 50) {
+      if (typeof confetti !== 'undefined') {
+        confetti({
+          particleCount: count,
+          spread: 65,
+          origin: { y: 0.65 },
+          colors: ['#ff4d7e', '#ffd15c', '#a265ff', '#54a0ff', '#ff9ff3']
+        });
+      }
+    }
+
+    function blowCandle(candleEl) {
+      tryAutoPlayMusic();
+      if (!candleEl.classList.contains('blown')) {
+        candleEl.classList.add('blown');
+        blownCandlesCount++;
+
+        if (blownCandlesCount >= 3) {
+          setTimeout(() => {
+            document.getElementById('wishBanner').style.display = 'block';
+            document.getElementById('cakeInstruction').style.display = 'none';
+            triggerConfetti(90);
+          }, 350);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
